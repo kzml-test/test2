@@ -25,6 +25,8 @@ import (
 	"github.com/urfave/cli"
 )
 
+//abc
+
 var Cert = cli.Command{
 	Name:  "cert",
 	Usage: "Generate self-signed certificate",
@@ -88,9 +90,7 @@ func runCert(ctx *cli.Context) error {
 	default:
 		log.Fatalf("Unrecognized elliptic curve: %q", ctx.String("ecdsa-curve"))
 	}
-	if err != nil {
-		log.Fatalf("Failed to generate private key: %s", err)
-	}
+	
 
 	var notBefore time.Time
 	if len(ctx.String("start-date")) == 0 {
